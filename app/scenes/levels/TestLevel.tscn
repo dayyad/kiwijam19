@@ -14,4 +14,4 @@ margin_right = 652.0
 margin_bottom = 280.0
 
 [node name="NPC" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 156.375 )
+position = Vector2( 328.258, 146.036 )
