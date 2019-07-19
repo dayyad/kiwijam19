@@ -17,6 +17,12 @@ Top down game where you have the ability to spread your infection, then those in
 
 - People infected can spread it too
 
+- Scoring at the end of each round based on number infected
+
+- Scoring also based on rank of person infectd
+
+- Goal to get the whole school sick
+
 ## Style
 
 - 
