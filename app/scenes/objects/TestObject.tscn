@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 325.544, 20.3661 )
+
+[node name="PlaceHolderObstacle" type="ColorRect"]
+margin_left = -1.0
+margin_right = 649.0
+margin_bottom = 40.0
+color = Color( 0.768627, 0.65098, 0.65098, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 324.608, 20.4381 )
+shape = SubResource( 1 )
