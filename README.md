@@ -11,18 +11,12 @@ Top down game where you have the ability to spread your infection, then those in
 
 ## Core Mechanics
 
-2d
+- 2D top down view
 
-top down
+- Spreading a disease / infection via AOE
 
-Spreading a disease / infection
-
-people infected can spread it too
-
-
-
-### Literal Theme
-
-Games involving chain.
+- People infected can spread it too
 
 ## Style
+
+- 
