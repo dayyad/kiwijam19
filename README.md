@@ -27,6 +27,15 @@ Top down game where you have the ability to spread your infection, then those in
 
 ## Style
 
+- Bold outlines, strong silhouettes
+
+- Strong colour and contrast
+
+- Infected and non-infected need strong contast in design and colour
+
+### Setting
+
+-  Primary School? 
 - For each type of sick have seperate colour 1. Sick and able to spread 2. Simply sick but not contagious 3. "Dead / resting" 
 
 ## Base Scenes
