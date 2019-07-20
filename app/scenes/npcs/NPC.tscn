@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/npcs/NPC.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/Walk/Right_01.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/player/Walk/Right_08.png" type="Texture" id=9]
 [ext_resource path="res://assets/player/player.png" type="Texture" id=10]
 [ext_resource path="res://scenes/sneezes/NPCSneezeCollider.gd" type="Script" id=11]
+[ext_resource path="res://scenes/sneezes/BasicSneeze.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -31,11 +32,10 @@ height = 149.04
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 105.585
-height = 243.111
+height = 213.211
 
 [node name="Student" type="KinematicBody2D"]
-position = Vector2( 100.543, 101.054 )
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( 252.905, 253.416 )
 z_index = 1
 script = ExtResource( 1 )
 
@@ -43,6 +43,7 @@ script = ExtResource( 1 )
 scale = Vector2( 1, 1 )
 frames = SubResource( 2 )
 animation = "walk_right"
+frame = 1
 playing = true
 
 [node name="Foot_Collider" type="CollisionShape2D" parent="."]
@@ -51,9 +52,12 @@ rotation = 1.58825
 shape = SubResource( 1 )
 
 [node name="Sneeze_Collider" type="Area2D" parent="."]
-visible = false
+editor/display_folded = true
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sneeze_Collider"]
 position = Vector2( 13.0626, -8.45232 )
 shape = SubResource( 3 )
+
+[node name="Sneeze" parent="." instance=ExtResource( 12 )]
+position = Vector2( 14.3895, -127.721 )
