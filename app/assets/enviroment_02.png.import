@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sneeze_01.png-88f4f1940da41719abedb251a12ef173.stex"
+path="res://.import/enviroment_02.png-4d995155359fd191034271b8d3b7808d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/particles/New folder/sneeze_01.png"
-dest_files=[ "res://.import/sneeze_01.png-88f4f1940da41719abedb251a12ef173.stex" ]
+source_file="res://assets/enviroment_02.png"
+dest_files=[ "res://.import/enviroment_02.png-4d995155359fd191034271b8d3b7808d.stex" ]
 
 [params]
 

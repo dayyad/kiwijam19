@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/particles/sneeze/sneeze_03.png" type="Texture" id=1]
+[ext_resource path="res://assets/particles/New folder/sneeze_01.png" type="Texture" id=1]
 [ext_resource path="res://scenes/sneezes/Sneeze.gd" type="Script" id=2]
 
 [sub_resource type="ParticlesMaterial" id=1]
@@ -8,7 +8,6 @@ flag_disable_z = true
 gravity = Vector3( 0, 99, 0 )
 initial_velocity = 906.9
 initial_velocity_random = 1.0
-angular_velocity = 427.92
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 damping = 22.17
