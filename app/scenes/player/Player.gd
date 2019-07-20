@@ -31,9 +31,20 @@ func _process(delta):
     if Input.is_action_pressed("ui_select"):
         _do_sneeze();
         pass
+        
+    if move_vect.x > 0:
+        $AnimatedSprite.play("walk_right");
+        pass
+
+    if move_vect.x <= 0:
+        $AnimatedSprite.play("walk_left");
+        pass
+    
+    if move_vect.x == 0 && move_vect.y == 0:
+        $AnimatedSprite.play("resting");
+        pass
 
     move_and_collide(move_vect);
-
     pass
 
 #Create a sneeze from this position if possible.
