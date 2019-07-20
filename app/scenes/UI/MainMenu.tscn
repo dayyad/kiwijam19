@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/UI/homescreen.png" type="Texture" id=1]
+[ext_resource path="res://scenes/UI/PlayColorRect.gd" type="Script" id=2]
+[ext_resource path="res://scenes/UI/QuitColorRect.gd" type="Script" id=3]
+
+[node name="MainMenu" type="Node"]
+
+[node name="homescreen" type="Sprite" parent="."]
+position = Vector2( 966.388, 541.959 )
+texture = ExtResource( 1 )
+
+[node name="PlayColorRect" type="ColorRect" parent="."]
+margin_left = 702.274
+margin_top = 395.758
+margin_right = 1227.27
+margin_bottom = 495.758
+color = Color( 1, 1, 1, 0.341176 )
+script = ExtResource( 2 )
+
+[node name="QuitColorRect" type="ColorRect" parent="."]
+margin_left = 701.492
+margin_top = 583.345
+margin_right = 1226.49
+margin_bottom = 688.345
+color = Color( 1, 1, 1, 0.196078 )
+script = ExtResource( 3 )
+
+[node name="PlayButton" type="TextureButton" parent="."]
+margin_left = 697.0
+margin_top = 394.0
+margin_right = 1219.0
+margin_bottom = 496.0
+
+[node name="QuitButton" type="TextureButton" parent="."]
+margin_left = 700.492
+margin_top = 585.345
+margin_right = 1222.49
+margin_bottom = 687.345
+[connection signal="mouse_entered" from="PlayButton" to="PlayColorRect" method="_on_PlayButton_mouse_entered"]
+[connection signal="mouse_exited" from="PlayButton" to="PlayColorRect" method="_on_PlayButton_mouse_exited"]
+[connection signal="mouse_entered" from="QuitButton" to="QuitColorRect" method="_on_QuitButton_mouse_entered"]
+[connection signal="mouse_exited" from="QuitButton" to="QuitColorRect" method="_on_QuitButton_mouse_exited"]
