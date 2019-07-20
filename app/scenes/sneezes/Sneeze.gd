@@ -22,13 +22,19 @@ func _ready():
 #	pass
 
 func _process(delta):
-	if Input.is_action_pressed("ui_select"):
-		restart();
-		emitting = true;
-		pass
+	#if Input.is_action_pressed("ui_select"):
+	#	restart();
+	#	emitting = true;
+	#	pass
 	pass
 
 #Emits this sneeze in the given direction.
 func _emit(direction : Vector2):
+	rotation_degrees = 180;
 	
+	if direction.x > 0:
+		rotation_degrees = 0;
+
+	restart();
+	emitting = true;
 	pass

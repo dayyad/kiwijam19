@@ -49,8 +49,6 @@ func _process(delta):
 
 #Create a sneeze from this position if possible.
 func _do_sneeze():
-
     #Check which way the player is facing before doing the sneeze
-
-
+    $BasicSneeze._emit(move_vect);
     pass
