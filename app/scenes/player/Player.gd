@@ -33,12 +33,11 @@ func _process(delta):
         _do_sneeze();
         pass
         
-    if move_vect.x > 0:
-        $AnimatedSprite.play("walk_right");
-        pass
+    $AnimatedSprite.play("walk_right");
+    $AnimatedSprite.flip_h = false;
 
     if move_vect.x <= 0:
-        $AnimatedSprite.play("walk_left");
+        $AnimatedSprite.flip_h = true;
         pass
     
     if move_vect.x == 0 && move_vect.y == 0:
@@ -52,6 +51,6 @@ func _process(delta):
 func _do_sneeze():
 
     #Check which way the player is facing before doing the sneeze
-    
+
 
     pass

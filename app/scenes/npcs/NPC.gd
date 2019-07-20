@@ -31,12 +31,11 @@ func _process(delta):
 		direction_moving = Vector2(rand_range(-move_speed,move_speed),rand_range(-move_speed,move_speed));
 
 	#Manage the movement
-	if direction_moving.x > 0:
-		$AnimatedSprite.play("walk_right");
-		pass
-		
+	$AnimatedSprite.play("walk_right");
+	$AnimatedSprite.flip_h = false;
+
 	if direction_moving.x <= 0:
-		$AnimatedSprite.play("walk_left");
+		$AnimatedSprite.flip_h = true;
 		pass
     
 	if direction_moving.x == 0 && direction_moving.y == 0:
