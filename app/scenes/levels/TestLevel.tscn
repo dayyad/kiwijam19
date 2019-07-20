@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/playground.png" type="Texture" id=1]
 [ext_resource path="res://scenes/npcs/NPC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/UI/GameUI.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 966.227, 104.663 )
@@ -39,6 +40,7 @@ shape = SubResource( 2 )
 editor/display_folded = true
 
 [node name="LevelNPCs" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="NPC" parent="LevelNPCs" instance=ExtResource( 2 )]
 position = Vector2( 858.436, 287.587 )
@@ -99,3 +101,5 @@ scale = Vector2( 0.44, 0.44 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1052.33, 298.047 )
 scale = Vector2( 0.44, 0.44 )
+
+[node name="GameUI" parent="." instance=ExtResource( 4 )]
