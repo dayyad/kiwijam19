@@ -7,13 +7,16 @@ extends KinematicBody2D
 # var b = "text"
 
 #var kinematic_body : KinematicBody2D;
-var steps_in_direction = 100;
-var steps_taken = 0 ;
+var step_limit = 100;
+var steps_taken = 1000 ;
 
-var direction_moving = Vector2(2,2)
+var direction_moving = Vector2(0,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Randomise the limit off steps to make it look a little more natural.TYPE_VECTOR2
+	step_limit = rand_range(150,180);
+
 	#kinematic_body = $KinematicBody2D;
 	pass # Replace with function body.
 
@@ -21,7 +24,7 @@ func _ready():
 func _process(delta):
 	steps_taken = steps_taken + 1;
 
-	if steps_taken >= steps_in_direction:
+	if steps_taken >= step_limit:
 		steps_taken = 0;
 		direction_moving = Vector2(rand_range(-2,2),rand_range(-2,2));
 

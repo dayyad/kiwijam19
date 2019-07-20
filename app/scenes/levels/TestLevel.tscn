@@ -1,17 +1,123 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scenes/objects/TestObject.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/npcs/NPC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/playground.png" type="Texture" id=1]
+[ext_resource path="res://scenes/objects/OtherTestObject.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/TestObject.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/npcs/NPC.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 966.227, 104.663 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 27.7368, 484.505 )
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="TestObject" parent="." instance=ExtResource( 1 )]
+[node name="playground" type="Sprite" parent="."]
+position = Vector2( 961.927, 537.717 )
+texture = ExtResource( 1 )
 
-[node name="TestObject2" parent="." instance=ExtResource( 1 )]
-margin_left = 2.0
-margin_top = 240.0
-margin_right = 652.0
-margin_bottom = 280.0
+[node name="Colliders" type="StaticBody2D" parent="."]
+editor/display_folded = true
 
-[node name="NPC" parent="." instance=ExtResource( 2 )]
-position = Vector2( 328.258, 146.036 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders"]
+position = Vector2( 956.477, 103.245 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Colliders"]
+position = Vector2( 968.461, 1189.75 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colliders"]
+position = Vector2( -26.149, 617.21 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colliders"]
+position = Vector2( 1939.15, 617.21 )
+shape = SubResource( 2 )
+
+[node name="LevelObjects" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="OtherTestObject" parent="LevelObjects" instance=ExtResource( 2 )]
+position = Vector2( 2139.51, 583.382 )
+
+[node name="OtherTestObject2" parent="LevelObjects" instance=ExtResource( 2 )]
+position = Vector2( 3093.9, 406.315 )
+
+[node name="Node2D" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2296.51, 752.666 )
+
+[node name="Node2D3" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2296.51, 195.661 )
+
+[node name="Node2D5" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2865.15, 752.666 )
+
+[node name="Node2D8" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2865.15, 195.661 )
+
+[node name="Node2D2" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2485.2, 752.666 )
+
+[node name="Node2D4" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2485.2, 195.661 )
+
+[node name="Node2D6" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 3053.83, 752.666 )
+
+[node name="Node2D7" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 3053.83, 195.661 )
+
+[node name="TestObject2" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2107.2, 752.68 )
+
+[node name="TestObject4" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2107.2, 195.675 )
+
+[node name="TestObject3" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2675.84, 752.68 )
+
+[node name="TestObject5" parent="LevelObjects" instance=ExtResource( 3 )]
+position = Vector2( 2675.84, 195.675 )
+
+[node name="OtherTestObject3" parent="LevelObjects" instance=ExtResource( 2 )]
+position = Vector2( 2140.34, 411.365 )
+
+[node name="OtherTestObject4" parent="LevelObjects" instance=ExtResource( 2 )]
+position = Vector2( 2139.05, 238.19 )
+
+[node name="OtherTestObject5" parent="LevelObjects" instance=ExtResource( 2 )]
+position = Vector2( 3094.1, 234.313 )
+
+[node name="OtherTestObject6" parent="LevelObjects" instance=ExtResource( 2 )]
+position = Vector2( 3091.52, 580.664 )
+
+[node name="LevelNPCs" type="Node2D" parent="."]
+
+[node name="NPC" parent="LevelNPCs" instance=ExtResource( 4 )]
+position = Vector2( 858.436, 287.587 )
+
+[node name="NPC2" parent="LevelNPCs" instance=ExtResource( 4 )]
+position = Vector2( 1454.32, 361.838 )
+
+[node name="NPC3" parent="LevelNPCs" instance=ExtResource( 4 )]
+position = Vector2( 371.458, 456.531 )
+
+[node name="KinematicBody2D" parent="LevelNPCs" instance=ExtResource( 4 )]
+position = Vector2( 359.602, 777.956 )
+
+[node name="KinematicBody2D2" parent="LevelNPCs" instance=ExtResource( 4 )]
+position = Vector2( 645.914, 900.378 )
+
+[node name="KinematicBody2D3" parent="LevelNPCs" instance=ExtResource( 4 )]
+position = Vector2( 851.163, 637.091 )
+
+[node name="Student" parent="LevelNPCs" instance=ExtResource( 4 )]
+position = Vector2( 962.069, 915.181 )
+
+[node name="Student2" parent="LevelNPCs" instance=ExtResource( 4 )]
+position = Vector2( 1628.92, 597.499 )
+
+[node name="Student3" parent="LevelNPCs" instance=ExtResource( 4 )]
+position = Vector2( 1567.95, 884.752 )
