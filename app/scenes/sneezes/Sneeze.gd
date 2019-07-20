@@ -7,17 +7,15 @@ class_name Sneeze
 # var a = 2
 # var b = "text"
 
+var description = "A basic sneeze";
 var angle : float;
 var distance : float;
 
+signal sneeze_hit(sneeze_info);
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
 	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _process(delta):
 	#if Input.is_action_pressed("ui_select"):
@@ -50,8 +48,14 @@ func _check_sneeze_collisions():
 		for i in range(0, collided_areas.size()) :
 			var area = collided_areas[i];
 			if area is NPCSneezeCollider :
-				area._sneezed_on();
-				print("sneezing on someone");
+				#Pass the sneeze on the the target
+				area._sneeze_hit(_clone_dict());
+				#print("sneezing on someone");
 			pass
 		pass
 	pass
+
+#Returns a dictionary holding the data that represents this object
+func _clone_dict():
+	var dict = {"description": description};
+	return dict;  

@@ -43,11 +43,11 @@ script = ExtResource( 1 )
 scale = Vector2( 1, 1 )
 frames = SubResource( 2 )
 animation = "walk_right"
-frame = 4
+frame = 2
 playing = true
 
 [node name="Foot_Collider" type="CollisionShape2D" parent="."]
-position = Vector2( -6.19081, 156.102 )
+position = Vector2( 9.20941, 157.385 )
 rotation = 1.58825
 shape = SubResource( 1 )
 

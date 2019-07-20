@@ -44,6 +44,7 @@ position = Vector2( 111.544, 113.051 )
 scale = Vector2( 0.44, 0.44 )
 frames = SubResource( 2 )
 animation = "walk_right"
+frame = 2
 playing = true
 
 [node name="BasicSneeze" parent="." instance=ExtResource( 11 )]
