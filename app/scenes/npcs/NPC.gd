@@ -45,3 +45,9 @@ func _process(delta):
 	#kinematic_body.move_and_collide(rel_move);
 	move_and_collide(direction_moving);
 	pass
+
+
+#Called when this nodes collider is sneezed on.
+func _sneezed_on():
+
+	pass

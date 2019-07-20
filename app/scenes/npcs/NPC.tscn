@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/npcs/NPC.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/Walk/Right_01.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/player/Walk/Right_07.png" type="Texture" id=8]
 [ext_resource path="res://assets/player/Walk/Right_08.png" type="Texture" id=9]
 [ext_resource path="res://assets/player/player.png" type="Texture" id=10]
+[ext_resource path="res://scenes/sneezes/NPCSneezeCollider.gd" type="Script" id=11]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -42,7 +43,7 @@ script = ExtResource( 1 )
 scale = Vector2( 1, 1 )
 frames = SubResource( 2 )
 animation = "walk_right"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Foot_Collider" type="CollisionShape2D" parent="."]
@@ -51,6 +52,7 @@ rotation = 1.58825
 shape = SubResource( 1 )
 
 [node name="Sneeze_Collider" type="Area2D" parent="."]
+script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sneeze_Collider"]
 position = Vector2( 13.0626, -8.45232 )

@@ -29,7 +29,11 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( -1.71475, -1.71475 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 113.112, 157.967 )
@@ -40,8 +44,7 @@ position = Vector2( 111.544, 113.051 )
 scale = Vector2( 0.44, 0.44 )
 frames = SubResource( 2 )
 animation = "walk_right"
-frame = 5
 playing = true
 
 [node name="BasicSneeze" parent="." instance=ExtResource( 11 )]
-position = Vector2( 275.681, 60.8942 )
+position = Vector2( 119.638, 54.0352 )

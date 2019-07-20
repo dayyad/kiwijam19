@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/sneezes/Disease.gd"
 }, {
+"base": "Area2D",
+"class": "NPCSneezeCollider",
+"language": "GDScript",
+"path": "res://scenes/sneezes/NPCSneezeCollider.gd"
+}, {
 "base": "Particles2D",
 "class": "Sneeze",
 "language": "GDScript",
@@ -21,6 +26,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Disease": "",
+"NPCSneezeCollider": "",
 "Sneeze": ""
 }
 
