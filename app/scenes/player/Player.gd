@@ -3,6 +3,7 @@ extends KinematicBody2D
 var sneeze : Sneeze;
 
 var move_speed = 5;
+var move_vect = Vector2(0,0);
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,7 +11,7 @@ func _ready():
 
 func _process(delta):
 
-    var move_vect = Vector2(0,0)
+    move_vect = Vector2(0,0)
     
     if Input.is_action_pressed("ui_right"):
         move_vect.x = move_speed;
@@ -49,5 +50,8 @@ func _process(delta):
 
 #Create a sneeze from this position if possible.
 func _do_sneeze():
+
+    #Check which way the player is facing before doing the sneeze
+    
 
     pass

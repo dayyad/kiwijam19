@@ -1,10 +1,30 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="BasicSneeze" type="Node2D"]
+[ext_resource path="res://scenes/sneezes/Sneeze.gd" type="Script" id=1]
 
-[node name="particles" type="Node2D" parent="."]
+[sub_resource type="ParticlesMaterial" id=1]
+flag_disable_z = true
+gravity = Vector3( 0, 99, 0 )
+initial_velocity = 906.9
+initial_velocity_random = 1.0
+angular_velocity = 427.92
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 22.17
+damping_random = 0.65
+scale = 9.72
+scale_random = 1.0
+color = Color( 0.243137, 0.619608, 0.12549, 1 )
+hue_variation = 1.0
+hue_variation_random = 1.0
 
-[node name="sneeze_particle_placeholder" type="ColorRect" parent="particles"]
-margin_right = 10.0
-margin_bottom = 10.0
-color = Color( 0.12549, 0.498039, 0.0823529, 1 )
+[node name="Sneeze" type="Particles2D"]
+z_index = 2
+emitting = false
+amount = 50
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+local_coords = false
+process_material = SubResource( 1 )
+script = ExtResource( 1 )
