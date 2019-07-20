@@ -30,8 +30,8 @@ func _process(delta):
 	_take_steps();
 	_animate();
 	pass
-	
 
+#Move the player and track what direction it should go in
 func _take_steps():
 	if steps_taken >= step_limit:
 		steps_taken = 0;
@@ -42,19 +42,25 @@ func _take_steps():
 
 #Deals with all the edge cases for animating this character
 func _animate():
-	#Manage the movement
-	$AnimatedSprite.play("walk_right");
-	$AnimatedSprite.flip_h = false;
-
-	if direction_moving.x <= 0:
-		$AnimatedSprite.flip_h = true;
-		pass
-    
-	if direction_moving.x == 0 && direction_moving.y == 0:
-		$AnimatedSprite.play("resting");
+	#If we are not infected stay the same.
+	if sickness.size() == 0: 	
+		$AnimatedSprite.play("walk_right");
+		$AnimatedSprite.flip_h = false;
+	
+		if direction_moving.x <= 0:
+			$AnimatedSprite.flip_h = true;
+			pass
+	    
+		if direction_moving.x == 0 && direction_moving.y == 0:
+			$AnimatedSprite.play("resting");
+			pass
 		pass
 		
-	pass
+	#Draw the person as infected.
+	if sickness.size() > 0:
+		$AnimatedSprite.modulate = Color("8ac973")
+		pass
+		
 
 #Called when this nodes collider is sneezed on.
 func _sneeze_hit(dict : Dictionary):
