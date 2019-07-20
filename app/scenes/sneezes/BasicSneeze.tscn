@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="BasicSneeze" type="Node2D"]
+
+[node name="particles" type="Node2D" parent="."]
+
+[node name="sneeze_particle_placeholder" type="ColorRect" parent="particles"]
+margin_right = 10.0
+margin_bottom = 10.0
+color = Color( 0.12549, 0.498039, 0.0823529, 1 )
