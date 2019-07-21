@@ -10,9 +10,15 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
+    _check_input();
+    _animate();
 
+    move_and_collide(move_vect);
+    pass
+
+#Changes the players movement depending on input pressed also checks if player wants to sneeze
+func _check_input():
     move_vect = Vector2(0,0)
-    
     if Input.is_action_pressed("ui_right"):
         move_vect.x = move_speed;
         pass
@@ -32,6 +38,14 @@ func _process(delta):
     if Input.is_action_pressed("ui_select"):
         _do_sneeze();
         pass
+    pass
+
+#Manage the players direction and animation related to the direction they are currently moving.
+func _animate():
+    #Rotate the sneeze manager with us.
+    $Sneeze.rotation_degrees = 180
+    if move_vect.x > 0:
+        $Sneeze.rotation_degrees = 0
         
     $AnimatedSprite.play("walk_right");
     $AnimatedSprite.flip_h = false;
@@ -43,12 +57,10 @@ func _process(delta):
     if move_vect.x == 0 && move_vect.y == 0:
         $AnimatedSprite.play("resting");
         pass
-
-    move_and_collide(move_vect);
     pass
 
 #Create a sneeze from this position if possible.
 func _do_sneeze():
     #Check which way the player is facing before doing the sneeze
-    $BasicSneeze._emit({"sneezes_count" : 1, "sneeze_delay" : 2, "deadly":false, "death_delay": 500}, move_vect);
+    $Sneeze._emit({"sneezes_count" : 1, "sneeze_delay" : 2, "deadly":false, "death_delay": 500}, move_vect);
     pass

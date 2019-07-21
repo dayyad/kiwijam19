@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/playground.png" type="Texture" id=1]
 [ext_resource path="res://scenes/npcs/NPC.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/UI/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/npcs/FemaleNPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/UI/GameUI.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 966.227, 104.663 )
@@ -66,40 +67,32 @@ scale = Vector2( 0.44, 0.44 )
 position = Vector2( 851.163, 637.091 )
 scale = Vector2( 0.44, 0.44 )
 
-[node name="Student" parent="LevelNPCs" instance=ExtResource( 2 )]
-position = Vector2( 962.069, 915.181 )
+[node name="FemaleStudent" parent="LevelNPCs" instance=ExtResource( 3 )]
+position = Vector2( 179.648, 607.589 )
 scale = Vector2( 0.44, 0.44 )
 
-[node name="Student4" parent="LevelNPCs" instance=ExtResource( 2 )]
-position = Vector2( 188.511, 322.983 )
+[node name="FemaleStudent2" parent="LevelNPCs" instance=ExtResource( 3 )]
+position = Vector2( 595.796, 600.414 )
 scale = Vector2( 0.44, 0.44 )
 
-[node name="Student5" parent="LevelNPCs" instance=ExtResource( 2 )]
-position = Vector2( 673.373, 487.688 )
+[node name="FemaleStudent3" parent="LevelNPCs" instance=ExtResource( 3 )]
+position = Vector2( 758.429, 421.039 )
 scale = Vector2( 0.44, 0.44 )
 
-[node name="Student6" parent="LevelNPCs" instance=ExtResource( 2 )]
-position = Vector2( 79.3246, 828.202 )
+[node name="FemaleStudent4" parent="LevelNPCs" instance=ExtResource( 3 )]
+position = Vector2( 213.131, 363.64 )
 scale = Vector2( 0.44, 0.44 )
 
-[node name="Student7" parent="LevelNPCs" instance=ExtResource( 2 )]
-position = Vector2( 218.121, 928.135 )
+[node name="FemaleStudent5" parent="LevelNPCs" instance=ExtResource( 3 )]
+position = Vector2( 1361.13, 559.756 )
 scale = Vector2( 0.44, 0.44 )
 
-[node name="Student8" parent="LevelNPCs" instance=ExtResource( 2 )]
-position = Vector2( 103.383, 628.335 )
+[node name="FemaleStudent6" parent="LevelNPCs" instance=ExtResource( 3 )]
+position = Vector2( 1339.6, 865.888 )
 scale = Vector2( 0.44, 0.44 )
 
-[node name="Student2" parent="LevelNPCs" instance=ExtResource( 2 )]
-position = Vector2( 1628.92, 597.499 )
-scale = Vector2( 0.44, 0.44 )
-
-[node name="Student3" parent="LevelNPCs" instance=ExtResource( 2 )]
-position = Vector2( 1567.95, 884.752 )
-scale = Vector2( 0.44, 0.44 )
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1052.33, 298.047 )
 scale = Vector2( 0.44, 0.44 )
 
-[node name="GameUI" parent="." instance=ExtResource( 4 )]
+[node name="GameUI" parent="." instance=ExtResource( 5 )]

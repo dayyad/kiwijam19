@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/particles/New folder/sneeze_01.png" type="Texture" id=1]
 [ext_resource path="res://scenes/sneezes/Sneeze.gd" type="Script" id=2]
@@ -8,6 +8,7 @@ flag_disable_z = true
 gravity = Vector3( 0, 99, 0 )
 initial_velocity = 906.9
 initial_velocity_random = 1.0
+angular_velocity = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 damping = 22.17
@@ -17,6 +18,8 @@ scale_random = 0.55
 color = Color( 0.454902, 0.627451, 0.396078, 1 )
 hue_variation = 1.0
 hue_variation_random = 1.0
+
+[sub_resource type="ShaderMaterial" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
@@ -35,6 +38,7 @@ script = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+material = SubResource( 3 )
 position = Vector2( 392.104, -14.1377 )
 rotation = -1.60349
 scale = Vector2( 25.7, 39.18 )

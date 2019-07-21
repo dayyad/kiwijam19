@@ -25,12 +25,6 @@ func _process(delta):
 
 #Emits this sneeze in the given direction.
 func _emit(sneeze_details : Dictionary, direction : Vector2):
-	rotation_degrees = 180
-	
-	print("trying to sneeze");
-
-	if direction.x > 0:
-		rotation_degrees = 0
 
 	restart();
 	emitting = true;
