@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var sneeze : Sneeze;
 
-var move_speed = 5;
+var move_speed = 350;
 var move_vect = Vector2(0,0);
 
 var sneeze_cooldown = 1;
@@ -18,7 +18,7 @@ func _ready():
 
 func _process(delta):
     _manage_disease(delta);
-    _check_input();
+    _check_input(delta);
     _animate();
     move_and_collide(move_vect);
     pass
@@ -29,22 +29,22 @@ func _manage_disease(delta):
     pass
 
 #Changes the players movement depending on input pressed also checks if player wants to sneeze
-func _check_input():
+func _check_input(delta):
     move_vect = Vector2(0,0)
     if Input.is_action_pressed("ui_right"):
-        move_vect.x = move_speed;
+        move_vect.x = move_speed * delta;
         pass
 
     if Input.is_action_pressed("ui_left"):
-        move_vect.x = -move_speed;
+        move_vect.x = -move_speed * delta;
         pass
 
     if Input.is_action_pressed("ui_up"):
-        move_vect.y = -move_speed;
+        move_vect.y = -move_speed * delta;
         pass
 
     if Input.is_action_pressed("ui_down"):
-        move_vect.y = move_speed;
+        move_vect.y = move_speed * delta;
         pass
 
     if Input.is_action_pressed("ui_select"):

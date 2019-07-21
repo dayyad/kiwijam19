@@ -7,15 +7,15 @@ extends KinematicBody2D
 # var b = "text"
 
 #var kinematic_body : KinematicBody2D;
-var step_limit = 100;
-var steps_taken = 1000;
+var seconds_walk_limit = 2;
+var time_walked_for = 1000;
 
 #A copy of the original sneeze stats
 var original_disease : Dictionary
 #Tracks the status of the diseas local to this.
 var disease : Dictionary
 
-var move_speed = 3;
+var move_speed = 200;
 var direction_moving = Vector2(0,0)
 
 signal infected(score);
@@ -23,27 +23,28 @@ signal infected(score);
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Randomise the limit off steps to make it look a little more natural.TYPE_VECTOR2
-	step_limit = rand_range(150,180);
+ seconds_walk_limit = rand_range(0.9, 1.1) * seconds_walk_limit;
 	#connect("sneeze_hit", self, "_sneeze_hit");
 	#kinematic_body = $KinematicBody2D;
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	steps_taken = steps_taken + 1;
+	time_walked_for = time_walked_for + delta;
 
 	_check_disease(delta);
-	_take_steps();
+	_take_steps(delta);
 	_animate();
 	pass
 
 #Move the player and track what direction it should go in
-func _take_steps():
-	if steps_taken >= step_limit:
-		steps_taken = 0;
+func _take_steps(delta):
+	if time_walked_for >= seconds_walk_limit:
+		time_walked_for = 0;
 		direction_moving = Vector2(rand_range(-move_speed,move_speed),rand_range(-move_speed,move_speed));
 	
-	move_and_collide(direction_moving);
+	#Scale speed and direction by the delta
+	move_and_collide(Vector2(direction_moving.x * delta, direction_moving.y * delta));
 	pass
 
 #Deals with all the edge cases for animating this character
