@@ -10,7 +10,6 @@ class_name Sneeze
 var description = "A basic sneeze";
 var angle : float;
 var distance : float;
-var details : Dictionary = {"sneezes_count" : 1, "sneeze_delay" : 4, "deadly":false, "death_delay": 5};
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,12 +26,11 @@ func _process(delta):
 func _emit(sneeze_details : Dictionary, direction : Vector2):
 	restart();
 	emitting = true;
-
-	_check_sneeze_collisions();
+	_check_sneeze_collisions(sneeze_details);
 	pass
 
 #Checks if this sneeze has hit anything.
-func _check_sneeze_collisions():
+func _check_sneeze_collisions(sneeze_details):
 
 	var collided_areas = $Area2D.get_overlapping_areas();
 	
@@ -43,7 +41,7 @@ func _check_sneeze_collisions():
 			var area = collided_areas[i];
 			if area is NPCSneezeCollider :
 				#Pass the sneeze on the the target
-				area._sneeze_hit(details);
+				area._sneeze_hit(sneeze_details);
 				#print("sneezing on someone");
 			pass
 		pass

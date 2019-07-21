@@ -7,7 +7,7 @@ extends KinematicBody2D
 # var b = "text"
 
 #var kinematic_body : KinematicBody2D;
-var seconds_walk_limit = 2;
+var seconds_walk_limit = 0.5;
 var time_walked_for = 1000;
 
 #A copy of the original sneeze stats
@@ -103,6 +103,7 @@ func _check_disease(delta):
 
 	if time_since_sneeze >= disease.sneeze_delay && disease.sneezes_count > 0:
 		print("we think its time");
+		print(disease.sneezes_count)
 		$Sneeze._emit(original_disease, direction_moving);
 		disease.sneezes_count -= 1;
 		time_since_sneeze = 0;
