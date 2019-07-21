@@ -20,11 +20,8 @@ func _process(delta):
     _manage_disease(delta);
     _check_input();
     _animate();
-
     move_and_collide(move_vect);
     pass
-
-
 
 #Track the amount of sneezes the player has left and the cooldown between them
 func _manage_disease(delta):

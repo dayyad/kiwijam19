@@ -18,6 +18,8 @@ var disease : Dictionary
 var move_speed = 3;
 var direction_moving = Vector2(0,0)
 
+signal infected(score);
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Randomise the limit off steps to make it look a little more natural.TYPE_VECTOR2
@@ -84,6 +86,8 @@ func _sneeze_hit(dict : Dictionary):
 	
 	original_disease = _clone_disease_dict(dict)
 	disease = _clone_disease_dict(dict)
+
+	emit_signal("infected", 10);
 	pass
 
 var time_since_sneeze = 0;
