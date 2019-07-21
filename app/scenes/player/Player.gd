@@ -5,15 +5,30 @@ var sneeze : Sneeze;
 var move_speed = 5;
 var move_vect = Vector2(0,0);
 
+var sneeze_cooldown = 1;
+var time_since_sneeze = 0;
+
+#Original copy and local copy of disease info.
+var original_disease = {"sneezes_count" : 3, "sneeze_delay" : 2, "deadly":false, "death_delay": 500}
+var disease = {"sneezes_count" : 3, "sneeze_delay" : 2, "deadly":false, "death_delay": 500}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
+    _manage_disease(delta);
     _check_input();
     _animate();
 
     move_and_collide(move_vect);
+    pass
+
+
+
+#Track the amount of sneezes the player has left and the cooldown between them
+func _manage_disease(delta):
+    time_since_sneeze += delta;
     pass
 
 #Changes the players movement depending on input pressed also checks if player wants to sneeze
@@ -61,6 +76,17 @@ func _animate():
 
 #Create a sneeze from this position if possible.
 func _do_sneeze():
+
+    print(time_since_sneeze)
+
+    if time_since_sneeze < sneeze_cooldown:
+        return
+
+    if disease.sneezes_count <= 0:
+        return
+
     #Check which way the player is facing before doing the sneeze
-    $Sneeze._emit({"sneezes_count" : 1, "sneeze_delay" : 2, "deadly":false, "death_delay": 500}, move_vect);
+    $Sneeze._emit({"sneezes_count" : original_disease.sneezes_count, "sneeze_delay" : original_disease.sneeze_delay, "deadly":original_disease.deadly, "death_delay": original_disease.death_delay}, move_vect);
+    disease.sneezes_count -= 1;
+    time_since_sneeze = 0;
     pass

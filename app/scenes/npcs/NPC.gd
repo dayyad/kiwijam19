@@ -66,8 +66,12 @@ func _animate():
 	#Draw the person as infected if infected.
 	if disease.size() > 0:
 		$AnimatedSprite.modulate = Color("8ac973")
-		pass
-		
+
+		#If they have sneezes left then make them slightly darker.
+		if disease.sneezes_count > 0 :
+			$AnimatedSprite.modulate = Color("48b320")
+			pass
+
 
 #Called when this nodes collider is sneezed on.
 func _sneeze_hit(dict : Dictionary):
