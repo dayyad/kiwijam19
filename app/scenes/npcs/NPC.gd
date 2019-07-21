@@ -30,8 +30,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	time_walked_for = time_walked_for + delta;
-
 	_check_disease(delta);
 	_take_steps(delta);
 	_animate();
@@ -39,6 +37,8 @@ func _process(delta):
 
 #Move the player and track what direction it should go in
 func _take_steps(delta):
+	time_walked_for = time_walked_for + delta;
+
 	if time_walked_for >= seconds_walk_limit:
 		time_walked_for = 0;
 		direction_moving = Vector2(rand_range(-move_speed,move_speed),rand_range(-move_speed,move_speed));

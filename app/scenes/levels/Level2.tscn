@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/enviroment_02.png" type="Texture" id=1]
 [ext_resource path="res://scenes/npcs/NPC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/UI/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/levels/Level2.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 674.631, 10 )
@@ -14,27 +16,33 @@ extents = Vector2( 299.638, 10 )
 extents = Vector2( 984.413, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 314.158, 10 )
+extents = Vector2( 43.1632, 44.3688 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 239.958, 10 )
+extents = Vector2( 43.0562, 40.5461 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 1103.87, 10 )
+extents = Vector2( 314.158, 10 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 96.856, 39.8004 )
+extents = Vector2( 239.958, 10 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 96.8557, 47.7505 )
+extents = Vector2( 1103.87, 10 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 27.9551, 540.656 )
+extents = Vector2( 96.856, 39.8004 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 22.6551, 201.452 )
+extents = Vector2( 96.8557, 47.7505 )
 
 [sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 27.9551, 540.656 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 22.6551, 201.452 )
+
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 22.655, 564.507 )
 
 [node name="Level2" type="Node2D"]
@@ -66,40 +74,48 @@ shape = SubResource( 2 )
 position = Vector2( 954.27, 63.618 )
 shape = SubResource( 3 )
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colliders/StaticBody2D3"]
+position = Vector2( 113.636, 905.676 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colliders/StaticBody2D3"]
+position = Vector2( 1811.36, 909.862 )
+shape = SubResource( 5 )
+
 [node name="StaticBody2D4" type="StaticBody2D" parent="Colliders"]
 editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
 position = Vector2( 1449.57, 434.605 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
 position = Vector2( 1841.77, 612.157 )
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
 position = Vector2( 1041.46, 1083.86 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
 position = Vector2( 129.851, 159.002 )
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
 position = Vector2( 1794.07, 159.002 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
 position = Vector2( -26.5003, 577.707 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
 position = Vector2( 954.011, 246.453 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
 position = Vector2( 1937.17, 585.657 )
-shape = SubResource( 11 )
+shape = SubResource( 13 )
 
 [node name="NPCs" type="Node2D" parent="."]
 editor/display_folded = true
@@ -147,3 +163,6 @@ scale = Vector2( 0.15, 0.15 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1424.78, 693.053 )
 scale = Vector2( 0.15, 0.15 )
+
+[node name="GameUI" parent="." instance=ExtResource( 4 )]
+script = ExtResource( 5 )

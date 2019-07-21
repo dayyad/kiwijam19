@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/particles/New folder/sneeze_01.png" type="Texture" id=1]
+
+[node name="UISneezeAmmo" type="Sprite"]
+position = Vector2( 99.8453, 999.731 )
+scale = Vector2( 3.60694, 4.86836 )
+texture = ExtResource( 1 )
