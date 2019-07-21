@@ -25,7 +25,6 @@ func _process(delta):
 
 #Emits this sneeze in the given direction.
 func _emit(sneeze_details : Dictionary, direction : Vector2):
-
 	restart();
 	emitting = true;
 

@@ -46,21 +46,24 @@ func _take_steps():
 
 #Deals with all the edge cases for animating this character
 func _animate():
-	#If we are not infected stay the same.
-	if disease.size() == 0: 	
-		$AnimatedSprite.play("walk_right");
-		$AnimatedSprite.flip_h = false;
-	
-		if direction_moving.x <= 0:
-			$AnimatedSprite.flip_h = true;
-			pass
-	    
-		if direction_moving.x == 0 && direction_moving.y == 0:
-			$AnimatedSprite.play("resting");
-			pass
+	#Rotate the sneeze collider with us
+	$Sneeze.rotation_degrees = 180
+	if direction_moving.x > 0:
+		$Sneeze.rotation_degrees = 0
+        	
+	$AnimatedSprite.play("walk_right");
+	$AnimatedSprite.flip_h = false;
+
+	if direction_moving.x <= 0:
+		$AnimatedSprite.flip_h = true;
 		pass
+	
+	if direction_moving.x == 0 && direction_moving.y == 0:
+		$AnimatedSprite.play("resting");
+		pass
+	pass
 		
-	#Draw the person as infected.
+	#Draw the person as infected if infected.
 	if disease.size() > 0:
 		$AnimatedSprite.modulate = Color("8ac973")
 		pass
