@@ -1,7 +1,7 @@
 # kiwijam19
 
-## Heading 
-Hi Im josh im learning this thing.
+## Sneeze Game 
+Contributors: Jonah - Developer, Josh - Graphics Designer: Hi Im josh im learning this thing.
 
 ## Theme
 Chain Reaction
